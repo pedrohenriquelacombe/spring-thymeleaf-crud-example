@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/layout/basic}">
+    <body>
+        <div layout:fragment="content">
+            <h1 class="text-center mb-4">Students</h1>
+
+            <a th:href="@{/students/new}" class="btn btn-outline-success mb-3">
+                <i class="fas fa-fw fa-user-plus"></i> New user
+            </a>
+
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Age</th>
+                            <th>Birthday</th>
+                            <th>Created at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${#lists.isEmpty(students)}">
+                            <td class="text-center fw-bold" colspan="6">No records found</td>
+                        </tr>
+                        <tr class="text-center" th:each="student: ${students}">
+                            <td th:text="${student.name}">Name</td>
+                            <td th:text="${student.email}">Email</td>
+                            <td th:text="${student.age}">Age</td>
+                            <td th:text="${#temporals.format(student.birthday, 'dd/MM/yyyy')}">Birthday</td>
+                            <td th:text="${#temporals.format(student.createdAt, 'dd/MM/yyyy HH:mm:ss')}">CreatedAt</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-warning">
+                                        <i class="fas fa-fw fa-map-marker"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-fw fa-pencil-alt"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-fw fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

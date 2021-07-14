@@ -1,4 +1,4 @@
-# Spring Rest API Template
+# Spring Thymeleaf Template
 This project is an implementation of a basic CRUD using RESTful principles.
 
 ## About

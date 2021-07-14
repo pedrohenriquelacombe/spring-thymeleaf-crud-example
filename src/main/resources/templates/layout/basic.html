@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html class="h-100" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
         <title>Spring Thymeleaf Template</title>
         <meta charset="utf-8">
@@ -12,10 +12,45 @@
         <link th:href="@{/vendors/fontawesome/css/all.min.css}" rel="stylesheet">
     </head>
 
-    <body>
-        <div class="container-fluid mb-4">
-            <div layout:fragment="content"></div>
-        </div>
+    <body class="d-flex flex-column h-100">
+        <header>
+            <div class="px-3 py-2 bg-dark text-white">
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <a th:href="@{/index}" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                            Spring Thymeleaf Template
+                        </a>
+
+                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                            <li>
+                                <a th:href="@{/students}" class="nav-link text-white text-center">
+                                    <i class="fas fa-users d-block fa-lg mx-auto mb-2"></i>
+                                    Users
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/addresses}" class="nav-link text-white text-center">
+                                    <i class="fas fa-map-marked fa-lg d-block mb-2"></i>
+                                    Address
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-shrink-0">
+            <div class="container">
+                <div class="py-4" layout:fragment="content"></div>
+            </div>
+        </main>
+
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <span class="text-muted">Place sticky footer content here.</span>
+            </div>
+        </footer>
 
         <script th:src="@{/vendors/jquery/jquery.min.js}" type="text/javascript"></script>
         <script th:src="@{/vendors/bootstrap/js/bootstrap.bundle.min.js}" type="text/javascript"></script>

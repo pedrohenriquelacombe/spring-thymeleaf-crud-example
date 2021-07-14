@@ -2,7 +2,53 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/layout/basic}">
     <body>
         <div layout:fragment="content">
-            <h1>Hello World</h1>
+
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-3">
+                    <h1 class="display-5 fw-bold">Spring Thymeleaf Template</h1>
+                    <p class="col-md-8 fs-4">
+                        This project is an implementation of a basic CRUD using MVC principles and Thymeleaf pages.
+                        The main goal of this project is to serve as a <b>basis to start the development of a new application</b>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                    <div class="h-100 p-5 text-white bg-dark rounded-3">
+                        <h2>Technologies</h2>
+                        <ul>
+                            <li>Spring Boot</li>
+                            <li>Spring Data JPA</li>
+                            <li>Spring Validation</li>
+                            <li>Thymeleaf</li>
+                            <li>Lombok</li>
+                            <li>ModelMapper</li>
+                            <li>H2 Database</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>Features & Built With</h2>
+                        <ul>
+                            <li>DTO (Data Transfer Object) principles</li>
+                            <li>Thymeleaf Layout Dialect</li>
+                            <li>Custom Exception Handler messages</li>
+                            <hr>
+                            <li>Spring Initializr</li>
+                            <li>Maven</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="pt-3 mt-4 border-top">How can i test my endpoints?</h2>
+            <p>
+                First, open your preference code editor and run the following code: <code>mvn clean install</code>
+            </p>
+            <p>After the maven downloaded all dependencies, run the <b>SpringThymeleafTemplateApplication.class</b>.</p>
         </div>
     </body>
 </html>

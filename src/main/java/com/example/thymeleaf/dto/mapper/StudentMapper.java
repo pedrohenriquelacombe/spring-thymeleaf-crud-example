@@ -23,7 +23,7 @@ public class StudentMapper {
     public static StudentResponseDTO toDTO(Student student) {
         StudentResponseDTO dto = new StudentResponseDTO();
         dto.setId(student.getId());
-        dto.setName(dto.getName());
+        dto.setName(student.getName());
         dto.setEmail(student.getEmail());
         dto.setBirthday(student.getBirthday());
         dto.setCreatedAt(student.getCreatedAt());

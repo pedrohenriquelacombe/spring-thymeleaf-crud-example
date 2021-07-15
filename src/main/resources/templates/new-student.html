@@ -5,23 +5,70 @@
             <h1 class="text-center mb-4">New student</h1>
 
             <form method="POST" th:action="@{/students/new}" class="mx-auto w-50" th:object="${student}">
-                <div class="row">
-                    <div class="col-sm-12 mb-3">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Enter the name..." th:field="*{name}">
+                <th:block th:include="fragment/error-message.html"></th:block>
+                <fieldset>
+                    <legend>Personal Informations</legend>
+                    <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Enter the name..." th:field="*{name}" th:classappend="${#fields.hasErrors('name')}? 'is-invalid'">
+                        </div>
+                        <div class="col-sm-12 mb-3">
+                            <label>E-mail</label>
+                            <input type="text" class="form-control" placeholder="Enter the e-mail..." th:field="*{email}" th:classappend="${#fields.hasErrors('email')}? 'is-invalid'">
+                        </div>
                     </div>
-                    <div class="col-sm-12 mb-3">
-                        <label>E-mail</label>
-                        <input type="text" class="form-control" placeholder="Enter the e-mail..." th:field="*{email}">
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label>Birthday</label>
+                            <input type="date" class="form-control" th:field="*{birthday}" th:classappend="${#fields.hasErrors('birthday')}? 'is-invalid'">
+                        </div>
                     </div>
-                </div>
+                </fieldset>
 
-                <div class="row">
-                    <div class="col-sm-6 mb-3">
-                        <label>Birthday</label>
-                        <input type="date" class="form-control" th:field="*{birthday}">
+                <fieldset>
+                    <legend>Address</legend>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label>Zip Code</label>
+                            <input type="text" class="form-control" placeholder="00000-000" th:field="*{address.zipCode}" th:classappend="${#fields.hasErrors('address.zipCode')}? 'is-invalid'">
+                        </div>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label>Street</label>
+                        <input type="text" class="form-control" placeholder="Enter the street..." th:field="*{address.street}" th:classappend="${#fields.hasErrors('address.street')}? 'is-invalid'">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label>Number</label>
+                            <input type="text" class="form-control" placeholder="Enter the name..." th:field="*{address.number}" th:classappend="${#fields.hasErrors('address.number')}? 'is-invalid'">
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label>Complement</label>
+                            <input type="text" class="form-control" placeholder="Enter the complement..." th:field="*{address.complement}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label>District </label>
+                            <input type="text" class="form-control" placeholder="Enter the district..." th:field="*{address.district}" th:classappend="${#fields.hasErrors('address.district')}? 'is-invalid'">
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label>City</label>
+                            <input type="text" class="form-control" placeholder="Enter the city..." th:field="*{address.city}" th:classappend="${#fields.hasErrors('address.city')}? 'is-invalid'">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label>State</label>
+                            <input type="text" class="form-control" placeholder="Enter the state..." th:field="*{address.state}" th:classappend="${#fields.hasErrors('address.state')}? 'is-invalid'">
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label>Country</label>
+                            <input type="text" class="form-control" placeholder="Enter the country..." th:field="*{address.country}" th:classappend="${#fields.hasErrors('address.country')}? 'is-invalid'">
+                        </div>
+                    </div>
+                </fieldset>
 
                 <div class="row">
                     <div class="col-sm-6">

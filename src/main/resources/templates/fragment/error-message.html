@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<div class="alert alert-danger alert-dismissible fade show" role="alert" th:if="${#fields.hasAnyErrors()}">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<ul class="my-0">
+				<li th:each="error: ${#fields.detailedErrors()}" th:text="${error.message}"></li>
+			</ul>
+		</div>
+	</body>
+</html>

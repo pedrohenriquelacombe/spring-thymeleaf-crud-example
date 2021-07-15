@@ -1,6 +1,7 @@
 package com.example.thymeleaf.service;
 
 import com.example.thymeleaf.entity.Student;
+import com.example.thymeleaf.repository.AddressRepository;
 import com.example.thymeleaf.repository.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class StudentService {
 
+    private AddressRepository addressRepository;
     private StudentRepository studentRepository;
 
     public Student findById(String id) {
@@ -17,7 +19,9 @@ public class StudentService {
     }
 
     public Student save(Student student) {
-        return this.studentRepository.save(student);
+        this.studentRepository.save(student);
+
+        return student;
     }
 
     public Student update(Student student) {

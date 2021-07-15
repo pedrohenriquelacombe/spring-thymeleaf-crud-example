@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${not #strings.isEmpty(message)}">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<span th:text="${message}"></span>
+		</div>
+	</body>
+</html>

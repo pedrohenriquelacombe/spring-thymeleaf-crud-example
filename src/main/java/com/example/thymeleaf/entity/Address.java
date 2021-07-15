@@ -35,6 +35,10 @@ public class Address {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @OneToOne
+    @JoinColumn(name = "fk_student")
+    private Student student;
+
     @PrePersist
     private void prePersist() {
         this.id = UUID.randomUUID().toString();

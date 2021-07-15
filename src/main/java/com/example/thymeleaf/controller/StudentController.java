@@ -7,10 +7,7 @@ import com.example.thymeleaf.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -45,6 +42,12 @@ public class StudentController {
         this.studentService.save(StudentMapper.toEntity(studentRequestDTO));
         attributes.addFlashAttribute("message", "User registered successfully!");
         return new ModelAndView("redirect:/students");
+    }
+
+    @GetMapping("/{id}/delete")
+    public ModelAndView students(@PathVariable String id) {
+        this.studentService.deleteById(id);
+        return this.students();
     }
 
 }

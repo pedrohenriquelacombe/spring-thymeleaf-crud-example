@@ -29,7 +29,4 @@ public class AddressRequestDTO {
     @NotEmpty(message = "{NotEmpty.state}")
     private String state;
 
-    @NotEmpty(message = "{NotEmpty.country}")
-    private String country;
-
 }

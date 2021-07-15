@@ -33,6 +33,7 @@ public class StudentMapper {
         dto.setEmail(student.getEmail());
         dto.setBirthday(student.getBirthday());
         dto.setCreatedAt(student.getCreatedAt());
+        dto.setAddress(AddressMapper.toDTO(student.getAddress()));
         return dto;
     }
 

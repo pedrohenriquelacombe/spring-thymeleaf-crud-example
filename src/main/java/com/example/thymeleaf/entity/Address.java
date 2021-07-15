@@ -27,7 +27,6 @@ public class Address {
     private String district;
     private String city;
     private String state;
-    private String country;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -49,4 +48,5 @@ public class Address {
     private void preUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
 }

@@ -1,6 +1,7 @@
 package com.example.thymeleaf.dto.mapper;
 
 import com.example.thymeleaf.dto.AddressRequestDTO;
+import com.example.thymeleaf.dto.AddressResponseDTO;
 import com.example.thymeleaf.entity.Address;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -17,8 +18,16 @@ public class AddressMapper {
         address.setDistrict(dto.getDistrict());
         address.setCity(dto.getCity());
         address.setState(dto.getState());
-        address.setCountry(dto.getCountry());
         return address;
+    }
+
+    public static AddressResponseDTO toDTO(Address address) {
+        AddressResponseDTO dto = new AddressResponseDTO();
+        dto.setStreet(address.getStreet());
+        dto.setDistrict(address.getDistrict());
+        dto.setCity(address.getCity());
+        dto.setState(address.getState());
+        return dto;
     }
 
 }

@@ -30,7 +30,7 @@ public class Student {
     private LocalDateTime updatedAt;
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Address address;
+    private Address address;
 
     @PrePersist
     private void prePersist() {

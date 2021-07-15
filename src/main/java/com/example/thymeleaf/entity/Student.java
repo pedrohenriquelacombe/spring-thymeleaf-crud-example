@@ -29,6 +29,9 @@ public class Student {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Address address;
+
     @PrePersist
     private void prePersist() {
         this.id = UUID.randomUUID().toString();

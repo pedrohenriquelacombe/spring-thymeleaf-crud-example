@@ -2,6 +2,7 @@ package com.example.thymeleaf.dto.mapper;
 
 import com.example.thymeleaf.dto.StudentRequestDTO;
 import com.example.thymeleaf.dto.StudentResponseDTO;
+import com.example.thymeleaf.entity.Address;
 import com.example.thymeleaf.entity.Student;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,11 @@ public class StudentMapper {
         student.setName(dto.getName());
         student.setEmail(dto.getEmail());
         student.setBirthday(dto.getBirthday());
+
+        Address address = AddressMapper.toEntity(dto.getAddress());
+        address.setStudent(student);
+
+        student.setAddress(address);
         return student;
     }
 

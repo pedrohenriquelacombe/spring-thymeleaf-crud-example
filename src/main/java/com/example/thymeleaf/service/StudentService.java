@@ -20,7 +20,7 @@ public class StudentService {
 
     public Student save(Student student) {
         this.studentRepository.save(student);
-
+        this.addressRepository.save(student.getAddress());
         return student;
     }
 

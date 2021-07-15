@@ -44,7 +44,7 @@ public class StudentController {
         }
         this.studentService.save(StudentMapper.toEntity(studentRequestDTO));
         attributes.addFlashAttribute("message", "User registered successfully!");
-        return new ModelAndView("redirect::students/new");
+        return new ModelAndView("redirect:/students");
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.thymeleaf.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.util.ObjectUtils;
@@ -18,10 +19,18 @@ public class StudentResponseDTO {
     private String name;
     private String email;
     private LocalDate birthday;
+
+    private String zipCode;
+    private String street;
+    private String number;
+    private String complement;
+    private String district;
+    private String city;
+    private String state;
+
     private LocalDateTime createdAt;
 
-    private AddressResponseDTO address;
-
+    @JsonProperty(value = "age")
     public Integer getAge() {
         if (ObjectUtils.isEmpty(this.birthday)) {
             return null;

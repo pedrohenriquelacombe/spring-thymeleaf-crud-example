@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/layout/basic}">
     <body>
         <div layout:fragment="content">
-            <h1 class="text-center mb-4">New student</h1>
+            <h1 class="text-center mb-4">Edit student</h1>
 
-            <form method="POST" th:action="@{/students/new}" class="mx-auto w-50" th:object="${student}">
+            <form method="POST" th:action="@{/students/{id}(id=${student.id})}" class="mx-auto w-50" th:object="${student}">
                 <th:block th:include="fragment/error-message.html"></th:block>
+
                 <fieldset>
                     <legend>Personal Informations</legend>
                     <div class="row">
@@ -77,7 +78,7 @@
                     </div>
                     <div class="col-sm-6">
                         <button type="submit" class="btn btn-outline-success w-100">
-                            Save
+                            Update
                         </button>
                     </div>
                 </div>

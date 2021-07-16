@@ -47,7 +47,14 @@
         </footer>
 
         <script th:src="@{/vendors/jquery/jquery.min.js}" type="text/javascript"></script>
+        <script th:src="@{/vendors/jquery-mask/dist/jquery.mask.min.js}" type="text/javascript"></script>
         <script th:src="@{/vendors/bootstrap/js/bootstrap.bundle.min.js}" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".zipCode").mask("00000-000");
+                $(".birthdayDate").mask("00/00/0000");
+            });
+        </script>
         <th:block layout:fragment="scripts"></th:block>
     </body>
 </html>

@@ -1,5 +1,5 @@
 # Spring Thymeleaf Template
-This project is an implementation of a basic CRUD using MVC principles and Thymeleaf pages.
+This project is an implementation of a **basic CRUD using MVC principles and Thymeleaf pages**.
 
 ## About
 The main goal of this project is to serve as a **basis to start the development of a new application**.
@@ -33,4 +33,4 @@ First, open your preference code editor and run the following code below:
 mvn clean install
 ```
 
-After the maven downloaded all dependencies, run the SpringThymeleafTemplateApplication.class.
+After the maven downloaded all dependencies, run the **SpringThymeleafTemplateApplication.class**.

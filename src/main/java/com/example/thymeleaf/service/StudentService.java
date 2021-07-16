@@ -24,9 +24,10 @@ public class StudentService {
         return student;
     }
 
-    public Student update(Student student) {
-        Student studentDatabase = this.findById(student.getId());
-        BeanUtils.copyProperties(student, studentDatabase, "id", "createdAt", "updatedAt");
+    public Student update(String id, Student student) {
+        Student studentDatabase = this.findById(id);
+        BeanUtils.copyProperties(student, studentDatabase, "id", "createdAt", "updatedAt", "address");
+        BeanUtils.copyProperties(student.getAddress(), studentDatabase.getAddress(), "id", "createdAt", "updatedAt", "student");
         return this.studentRepository.save(studentDatabase);
     }
 

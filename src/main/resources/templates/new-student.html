@@ -32,39 +32,39 @@
                         <div class="col-sm-6 mb-3">
                             <label>Zip Code</label>
                             <div class="input-group">
-                                <input type="text" class="form-control zipCode" placeholder="00000-000" th:field="*{address.zipCode}" th:classappend="${#fields.hasErrors('address.zipCode')}? 'is-invalid'">
+                                <input type="text" class="form-control zipCode" placeholder="00000-000" th:field="*{zipCode}" th:classappend="${#fields.hasErrors('zipCode')}? 'is-invalid'">
                                 <button id="search-cep" type="button" class="btn btn-outline-primary">Search</button>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label>Street</label>
-                        <input type="text" class="form-control" placeholder="Enter the street..." th:field="*{address.street}" th:classappend="${#fields.hasErrors('address.street')}? 'is-invalid'">
+                        <input type="text" class="form-control" placeholder="Enter the street..." th:field="*{street}" th:classappend="${#fields.hasErrors('street')}? 'is-invalid'">
                     </div>
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <label>Number</label>
-                            <input type="text" class="form-control" placeholder="Enter the name..." th:field="*{address.number}" th:classappend="${#fields.hasErrors('address.number')}? 'is-invalid'">
+                            <input type="text" class="form-control" placeholder="Enter the name..." th:field="*{number}" th:classappend="${#fields.hasErrors('number')}? 'is-invalid'">
                         </div>
                         <div class="col-sm-6 mb-3">
                             <label>Complement</label>
-                            <input type="text" class="form-control" placeholder="Enter the complement..." th:field="*{address.complement}">
+                            <input type="text" class="form-control" placeholder="Enter the complement..." th:field="*{complement}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <label>District </label>
-                            <input type="text" class="form-control" placeholder="Enter the district..." th:field="*{address.district}" th:classappend="${#fields.hasErrors('address.district')}? 'is-invalid'">
+                            <input type="text" class="form-control" placeholder="Enter the district..." th:field="*{district}" th:classappend="${#fields.hasErrors('district')}? 'is-invalid'">
                         </div>
                         <div class="col-sm-6 mb-3">
                             <label>City</label>
-                            <input type="text" class="form-control" placeholder="Enter the city..." th:field="*{address.city}" th:classappend="${#fields.hasErrors('address.city')}? 'is-invalid'">
+                            <input type="text" class="form-control" placeholder="Enter the city..." th:field="*{city}" th:classappend="${#fields.hasErrors('city')}? 'is-invalid'">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <label>State</label>
-                            <input type="text" class="form-control" placeholder="Enter the state..." th:field="*{address.state}" th:classappend="${#fields.hasErrors('address.state')}? 'is-invalid'">
+                            <input type="text" class="form-control" placeholder="Enter the state..." th:field="*{state}" th:classappend="${#fields.hasErrors('state')}? 'is-invalid'">
                         </div>
                     </div>
                 </fieldset>
@@ -88,13 +88,13 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('button#search-cep').on('click', function() {
-                        $.get('https://api.postmon.com.br/v1/cep/' + $('input[name="address.zipCode"]').val(), function(response) {
+                        $.get('https://api.postmon.com.br/v1/cep/' + $('input[name="zipCode"]').val(), function(response) {
                             if(!("erro" in response)) {
-                                $('input[name="address.zipCode"]').val(response.cep);
-                                $('input[name="address.street"]').val(response.logradouro);
-                                $('input[name="address.state"]').val(response.estado);
-                                $('input[name="address.city"]').val(response.cidade);
-                                $('input[name="address.district"]').val(response.bairro);
+                                $('input[name="zipCode"]').val(response.cep);
+                                $('input[name="street"]').val(response.logradouro);
+                                $('input[name="state"]').val(response.estado);
+                                $('input[name="city"]').val(response.cidade);
+                                $('input[name="district"]').val(response.bairro);
                             }
                         });
                     });

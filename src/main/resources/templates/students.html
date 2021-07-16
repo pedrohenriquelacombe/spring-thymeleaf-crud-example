@@ -4,10 +4,11 @@
         <div layout:fragment="content">
             <h1 class="text-center mb-4">Students</h1>
 
+            <th:block th:include="fragment/success-message.html"></th:block>
+
             <a th:href="@{/students/new}" class="btn btn-outline-success mb-3">
                 <i class="fas fa-fw fa-user-plus"></i> New user
             </a>
-
             <div class="table-responsive">
                 <table class="table table-sm table-bordered">
                     <thead>
@@ -33,25 +34,63 @@
                             <td th:text="${student.email}">Email</td>
                             <td th:text="${student.age}">Age</td>
                             <td th:text="${#temporals.format(student.birthday, 'dd/MM/yyyy')}">Birthday</td>
-                            <td th:text="${student.address.street}">Street</td>
-                            <td th:text="${student.address.district}">District</td>
-                            <td th:text="${student.address.city}">City</td>
-                            <td th:text="${student.address.state}">State</td>
+                            <td th:text="${student.street}">Street</td>
+                            <td th:text="${student.district}">District</td>
+                            <td th:text="${student.city}">City</td>
+                            <td th:text="${student.state}">State</td>
                             <td th:text="${#temporals.format(student.createdAt, 'dd/MM/yyyy HH:mm:ss')}">CreatedAt</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a th:href="@{/students/{id}(id=${student.id})}" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-fw fa-pencil-alt"></i>
                                     </a>
-                                    <a th:href="@{/students/{id}/delete(id=${student.id})}" class="btn btn-sm btn-outline-danger">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" th:attr="data-bs-href=@{/students/{id}/delete(id=${student.id})}">
                                         <i class="fas fa-fw fa-trash-alt"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div id="deleteConfirmModal" class="modal" tabindex="-1">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Attention!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p>Are you sure you want to delete this student?</p>
+                        </div>
+                        <div class="modal-footer d-block">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary w-100" data-bs-dismiss="modal">Close</button>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-sm btn-outline-danger w-100">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <th:block layout:fragment="scripts">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    const modal = document.getElementById('deleteConfirmModal');
+                    modal.addEventListener('show.bs.modal', function (event) {
+                        const button = event.relatedTarget;
+                        const href = button.getAttribute('data-bs-href');
+                        const modalDeleteButton = modal.querySelector('a');
+                        modalDeleteButton.href = href;
+                    });
+                });
+            </script>
+        </th:block>
     </body>
 </html>

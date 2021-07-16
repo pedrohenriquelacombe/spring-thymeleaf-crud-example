@@ -8,4 +8,5 @@ import lombok.Setter;
 public class UpdateStudentDTO extends CreateStudentDTO {
 
     private String id;
+
 }

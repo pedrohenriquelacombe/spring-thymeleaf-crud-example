@@ -21,7 +21,7 @@ The main goal of this project is to serve as a **basis to start the development 
 ## Features
  - DTO (Data Transfer Object) principles
  - Thymeleaf Layout Dialect
- - Custom Exception Handler messages
+ - Custom Exception Handler pages
 
 ## Built With
 - [Spring Initializr](https://start.spring.io/)

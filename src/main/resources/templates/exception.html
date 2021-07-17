@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/layout/basic}">
+    <body>
+        <div layout:fragment="content">
+            <h1 class="text-center" style="font-size: 20em;">[[${status}]]</h1>
+            <h2 class="text-center" style="font-size: 4em;">[[${status == 404 ? 'Resource not found' : 'Internal Server Error'}]]</h2>
+            <p class="text-center mt-5">
+                <a href="javascript:history.back();" class="btn btn-outline-dark w-50">Back</a>
+            </p>
+        </div>
+    </body>
+</html>

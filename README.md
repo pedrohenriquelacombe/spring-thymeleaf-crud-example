@@ -1,4 +1,4 @@
-# Spring Thymeleaf Template
+# Spring Thymeleaf CRUD example
 This project is an implementation of a **basic CRUD using MVC principles and Thymeleaf pages**.
 
 ## About

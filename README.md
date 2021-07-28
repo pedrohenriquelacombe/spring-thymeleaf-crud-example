@@ -35,7 +35,7 @@ There are some jQuery functions implemented in some pages, like:
 ## Built With
 
 - [Maven](https://maven.apache.org/index.html)
-- [Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.3.RELEASE&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=thymeleaf&name=SpringThymeleafTemplate&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.thymeleaf&dependencies=web,devtools,h2,validation,thymeleaf,data-jpa,lombok)
+- [Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.3.RELEASE&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=thymeleaf&name=SpringThymeleafCRUD&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.thymeleaf&dependencies=web,devtools,h2,validation,thymeleaf,data-jpa,lombok)
 
 ## How can i test my endpoints?
 

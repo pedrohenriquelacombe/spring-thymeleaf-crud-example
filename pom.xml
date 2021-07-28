@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>thymeleaf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringThymeleafTemplate</name>
+	<name>SpringThymeleafCRUD</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
